@@ -1,10 +1,21 @@
 (function($) {
   'use strict';
+  var dict = [];
+  var dict2 = [];
+
   $(function() {
     var todoListItem = $('.todo-list');
     var todoListInput1 = $('.todo-list-input1'); // title
     var todoListInput2 = $('.todo-list-input2'); // difficulty
     var todoListInput3 = $('.todo-list-input3'); // priority
+
+    
+
+    // const todoListInput21 = JSON.stringify(todoListInput1);
+
+      // console.log(todoListInput1)
+
+
 
     $('.todo-list-add-btn').on("click", function(event) {
       event.preventDefault();
@@ -12,6 +23,9 @@
       var item = $(this).prevAll('.todo-list-input1').val();
       var difficulty = $(this).prevAll('.todo-list-input2').val();;
       var priority = $(this).prevAll('.todo-list-input3').val();;
+
+     
+
 
       var difficultyColour = "";
       var priorityColour = "";
@@ -48,10 +62,29 @@
         console.log(difficultyColour)
 
         todoListItem.append("<tr><td><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'>" + item + "</label></div></td><td><label class='badge badge-gradient-" + difficultyColour +"'>" + difficulty +"</label></td><td><label class='badge badge-gradient-" + priorityColour + "'>" + priority +"</label></td></tr>");
+        
+        
+  
+  
+      dict.push({
+          
+          value: item,
+          key: difficulty
+      });
+
+      dict2.push({
+        value: item,
+        key: priority
+      });
+        
+  
+
+  
         todoListInput1.val("");
         todoListInput2.val("");
         todoListInput3.val("");
       }
+
     });
 
     todoListItem.on('change', '.checkbox', function() {
@@ -69,5 +102,46 @@
       $(this).parent().remove();
     });
 
+    
+  
+  
+
   });
+
+  var todoListSorted = [];
+  function sortJsObjectdiff(obj) {
+    todoListSorted = obj.sort(function(a, b){return a.key - b.key});
+    // console.log(todoListSorted.reverse());
+    console.log(todoListSorted);
+}
+
+
+function sortJsObjectdprior(obj2) {
+  todoListSorted = obj2.sort(function(a, b){return a.key - b.key});
+  // console.log(todoListSorted.reverse());
+  console.log(todoListSorted);
+}
+
+
+  $(document).ready(function(){
+    $('#SortDifficulty').click(function(){
+      sortJsObjectdiff(dict);
+    });
+  });
+
+  $(document).ready(function(){
+    $('#SortPriority').click(function(){
+      sortJsObjectdprior(dict);
+      todoListInput1.val("");
+      todoListInput2.val("");
+      todoListInput3.val("");
+
+      todoListItem.append("<tr><td><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'>" + item + "</label></div></td><td><label class='badge badge-gradient-" + difficultyColour +"'>" + difficulty +"</label></td><td><label class='badge badge-gradient-" + priorityColour + "'>" + priority +"</label></td></tr>");
+
+    });
+  });
+
+
+
+  
 })(jQuery);
