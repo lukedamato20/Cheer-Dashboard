@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@aidansey164 
+lukedamato20
+/
+Cheer-Dashboard
+Private
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Cheer-Dashboard/index.html
+@lukedamato20
+lukedamato20 fix
+Latest commit 2159467 27 minutes ago
+ History
+ 2 contributors
+@lukedamato20@Secktroth
+569 lines (523 sloc)  24.2 KB
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,7 +144,6 @@
             </a>
             <div class="collapse" id="general-pages">
               <ul class="nav flex-column sub-menu">
-
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
@@ -194,6 +223,8 @@
                   <h4 class="card-title">Tasks List</h4>
 
                   <br>
+                  <input type="button" value="SortDiff" id="SortDifficulty" >
+                  <input type="button" value="SortPriority" id="SortPriority" >
 
                   <!-- Add items to list -->
                   <div class="add-items d-flex">
@@ -203,6 +234,8 @@
 
                     <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn"
                       id="add-task">Add</button>
+
+                   
                   </div>
 
                   <!-- Difficulty -->
@@ -230,10 +263,10 @@
                           </td>
 
                           <td>
-                            <label class="badge badge-gradient-danger">10</label>
+                            <label class="badge badge-gradient-danger" >10</label>
                           </td>
                           <td>
-                            <label class="badge badge-gradient-danger">8</label>
+                            <label class="badge badge-gradient-danger" id="Priority">8</label>
                           </td>
 
                         </tr>
@@ -247,10 +280,10 @@
                           </td>
 
                           <td>
-                            <label class="badge badge-gradient-danger">10</label>
+                            <label class="badge badge-gradient-danger" >10</label>
                           </td>
                           <td>
-                            <label class="badge badge-gradient-warning">6</label>
+                            <label class="badge badge-gradient-warning" >6</label>
                           </td>
                         </tr>
 
@@ -414,19 +447,15 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title text-black">Todo</h4>
                   <div class="add-items d-flex">
                     <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">
-
                     <button class="add btn btn-gradient-primary font-weight-bold todo-list-add-btn"
                       id="add-task">Add</button>
-
                   </div>
-
                   <div class="list-wrapper">
                     <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
                       <li>
@@ -476,7 +505,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
