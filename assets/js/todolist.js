@@ -12,7 +12,7 @@
       var item = $(this).prevAll('.todo-list-input1').val();
       var difficulty = $(this).prevAll('.todo-list-input2').val();;
       var priority = $(this).prevAll('.todo-list-input3').val();;
-      
+
       var difficultyColour = "";
       var priorityColour = "";
 
@@ -47,14 +47,11 @@
         console.log(priorityColour)
         console.log(difficultyColour)
 
-        
         todoListItem.append("<tr><td><div class='form-check'><label class='form-check-label'><input class='checkbox' type='checkbox'>" + item + "</label></div></td><td><label class='badge badge-gradient-" + difficultyColour +"'>" + difficulty +"</label></td><td><label class='badge badge-gradient-" + priorityColour + "'>" + priority +"</label></td></tr>");
         todoListInput1.val("");
         todoListInput2.val("");
         todoListInput3.val("");
-
       }
-
     });
 
     todoListItem.on('change', '.checkbox', function() {
