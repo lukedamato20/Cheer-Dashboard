@@ -3,34 +3,64 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
-  <link rel="stylesheet" href="style.css">
+  <title>HTML Login Page with Bootstrap Example</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Muli'>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
+  <!-- partial:index.partial.html -->
+  <div class="pt-5">
+    <h1 class="text-center">Cheer Login</h1>
 
-  <div class="login-form">
-    <form>
-      <h1>Login</h1>
-      <div class="content">
-        <div class="input-field">
-          <input type="email" placeholder="Email" autocomplete="nope">
+    <br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mx-auto">
+          <div class="card card-body">
+
+            <form id="submitForm" action="happy.html" method="post" data-parsley-validate=""
+              data-parsley-errors-messages-disabled="true" novalidate="" _lpchecked="1"><input type="hidden"
+                name="_csrf" value="7635eb83-1f95-4b32-8788-abec2724a9a4">
+
+              <div class="form-group required">
+                <lSabel for="username">Username</lSabel>
+                <input type="text" class="form-control text-lowercase" id="username" required="" name="username"
+                  value="">
+              </div>
+
+              <br>
+              <br>
+
+              <div class="form-group required">
+                <lSabel for="username">Password</lSabel>
+                <input type="text" class="form-control text-lowercase" id="username" required="" name="username"
+                  value="">
+              </div>
+
+              <br>
+              <div class="form-group mt-4 mb-4">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="remember-me" name="remember-me"
+                    data-parsley-multiple="remember-me">
+                  <label class="custom-control-label" for="remember-me">Remember me?</label>
+                </div>
+              </div>
+
+              <div class="form-group pt-1">
+                <button class="btn btn-primary btn-block">Log In</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="input-field">
-          <input type="password" placeholder="Password" autocomplete="new-password">
-        </div>
-        <a href="#" class="link">Forgot Your Password?</a>
       </div>
-      <div class="action">
-        <button>Register</button>
-        <button>Sign in</button>
-      </div>
-    </form>
+    </div>
   </div>
-
-  <script src="script.js"></script>
+  <!-- partial -->
 
 </body>
 
