@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Happy</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+
+</head>
+
+<body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-xlarge" style="z-index:4">
+        <a href="#" class="navbar-brand">
+            <img src="{{url_for('static', filename='images/logo.png')}}" height="37">
+        </a>
+    </div>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+        <div class="w3-container w3-row">
+            <br>
+            <div class="w3-col w3-large s8 w3-bar">
+                <span>Welcome, <strong>User</strong></span><br>
+            </div>
+        </div>
+        <hr>
+        <div class="w3-large w3-container">
+            <h5>Dashboard</h5>
+        </div>
+        <div class="w3-bar-block w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+                onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+            <a href="#" style="background-color:#864efe" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw"></i>  Overview</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Updates</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-music fa-fw"></i>  Music</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-globe fa-fw"></i>  News</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a>
+            <br>
+            <a href="{{url_for('static', filename='templates/index.html')}}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-remove fa-fw"></i>  Logout</a>
+
+        </div>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay">
+    </div>
+
+    <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+       <!-- Header -->
+       <header class="w3-container" style="padding-top:22px">
+        <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+    </header>
+
+    <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-third">
+            <div style="background-color:#864efe" class="w3-container w3-padding-16">
+                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+                <div class="w3-clear"></div>
+                <h4><bold>Updates: </bold></h4>Important Meeting Tomorrow
+                <div class="w3-right">
+                    <img src="{{url_for('static', filename='images/happy-updates.png')}}" alt="Music" style="width: 300px; height: 100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div style="background-color:#864efe" class="w3-container w3-padding-16">
+                <div class="w3-left"><i class="fa fa-globe w3-xxxlarge"></i></div>
+                <div class="w3-clear"></div>
+                <h4>News: </h4>Attorney makes big mistake
+                <div class="w3-right">
+                    <img src="{{url_for('static', filename='images/happy-news.png')}}" alt="Music" style="width: 300px; height: 100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div style="background-color:#864efe" class="w3-container w3-padding-16">
+                <div class="w3-left"><i class="fa fa-music w3-xxxlarge"></i></div>
+                <div class="w3-clear"></div>
+                <h4>Music</h4>
+                <div class="w3-right">
+                    <img src="{{url_for('static', filename='images/happy-song.png')}}" alt="Music" style="width: 450px; height: 100px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="w3-container w3-padding-16 w3-twothird">
+            <div id="myDIV" class="header">
+                <h2>My To Do List</h2>
+                <!-- <input type="text" id="myInput" placeholder="Title..."> -->
+                <!-- <span onclick="newElement()" class="addBtn">Add</span> -->
+            </div>
+
+            <ul id="myUL">
+                <li>Fix Broken TV</li> <!-- P: 8  D: 10 -->
+                <li>Wash and hang clothes</li> <!-- P: 6  D: 10 -->
+                <li>Make Dinner</li> <!-- P: 6  D: 7 -->
+                <li>Take Snoopy for a walk</li> <!-- P: 3  D: 6 -->
+                <li>Wash Dishes</li> <!-- P: 4  D: 4  -->
+                <li>Check emails</li> <!-- P: 1  D: 1 -->
+            </ul>
+        </div>
+        
+        <div class="w3-container w3-padding-16 w3-third">
+            <div id="myDIV" class="header">
+                <h2>Priority info</h2>
+                <!-- <input type="text" id="myInput" placeholder="Title..."> -->
+                <!-- <span onclick="newElement()" class="addBtn">Add</span> -->
+            </div>
+
+            <ul id="myUL">
+                <li><span>Priority: <strong>8</strong></span> &emsp; &emsp;  <span>Difficulty: <strong>10</strong></span></li>
+                <li><span>Priority: <strong>6</strong></span> &emsp; &emsp; <span>Difficulty: <strong>10</strong></span></li>
+                <li><span>Priority: <strong>6</strong></span> &emsp; &emsp; <span>Difficulty: <strong>7</strong></span></li>
+                <li><span>Priority: <strong>3</strong></span> &emsp; &emsp; <span>Difficulty: <strong>6</strong></span></li>
+                <li><span>Priority: <strong>4</strong></span> &emsp; &emsp; <span>Difficulty: <strong>4</strong></span></li>
+                <li><span>Priority: <strong>1</strong></span> &emsp; &emsp; <span>Difficulty: <strong>1</strong></span></li>
+            </ul>
+        </div>
+
+        <hr>
+        <div class="w3-container">
+            <h5>Emotion</h5>
+            <p>Happy</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-center w3-padding" style="background-color:#864efe; width:95%">95%</div>
+            </div>
+
+            <p>Productive</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-center w3-padding" style="background-color:#864efe; width:70%">70%</div>
+            </div>
+
+            <p>Tired</p>
+            <div class="w3-grey">
+                <div class="w3-container w3-center w3-padding" style="background-color:#864efe; width:10%">10%</div>
+            </div>
+        </div>
+        <hr>
+
+        <br>
+
+        <footer class="w3-container w3-padding-16 w3-light-grey">
+            <h4>FOOTER</h4>
+        </footer>
+
+    </div>
+
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</body>
+
+</html>
