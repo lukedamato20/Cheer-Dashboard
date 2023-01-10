@@ -162,3 +162,8 @@ input {
 .addBtn:hover {
   background-color: #bbb;
 }
+
+img {
+  max-width: 100%;
+}
+
